@@ -31,7 +31,7 @@ if ('Oral History' === $type): ?>
     </div>
     <?php endif; ?>
     <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
-    <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
+    <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>160))): ?>
     <div class="item-description">
         <?php echo $description; ?>
     </div>
