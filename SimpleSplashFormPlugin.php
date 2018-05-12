@@ -14,8 +14,8 @@
  * @package SimpleSplashForm
  */
 // Define Constants.
-define('SIMPLE_SPLASH_FORM_PAGE_PATH', 'splashpg/');
-define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_TITLE', 'Splash Page');
+define('SIMPLE_SPLASH_FORM_PAGE_PATH', 'gallery/');
+define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_TITLE', 'Gallery');
 define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_INSTRUCTIONS', 'Include an introduction for the page here.');
 define('SIMPLE_SPLASH_FORM_ADD_TO_MAIN_NAVIGATION', 1);
 
