@@ -21,7 +21,7 @@ set_loop_records('items', $items)
  <?php 
 $type = $item->getItemType()->name;
 if ('Oral History' === $type): ?>
-<li id="<?php echo metadata('item', array('OHMS Element Set','Sort Priority')); ?>" class="splashitem">
+<li id="<?php echo metadata('item', array('Item Type Metadata','Sort Priority')); ?>" class="splashitem">
 <div class="item record">
 
     <div class="item-meta">
