@@ -58,6 +58,7 @@ if ('Oral History' === $type): ?>
 </ul>
 
 <!-- mobile version -->
+<button id="splashsort_mobile" style="display:none;">Sort</button>
 <div id="splashset_mobile">
 <?php foreach (loop('items') as $item): ?>
  <?php 
