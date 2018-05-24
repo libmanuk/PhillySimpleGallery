@@ -1,22 +1,28 @@
 <?php echo head(); ?>
 
+
+<?php
+$items = get_records('Item', array(), 25);
+set_loop_records('items', $items)
+?>
+<button id="splashsort" style="display:none;">Sort</button>
 <div id="primary">
     <h1><?php echo html_escape(get_option('simple_splash_form_splash_page_title')); ?></h1>
 <div id="simple-splash">
     <div id="form-instructions">
         <?php echo get_option('simple_splash_form_splash_page_instructions'); // HTML ?>
     </div>
+    
+
+    
     <?php echo flash(); ?>
 
 </div>
 
-</div>
-<?php
-$items = get_records('Item', array(), 25);
-set_loop_records('items', $items)
-?>
-<button id="splashsort" style="display:none;">Sort</button>
+</div> 
 <ul id="splashset" class="splashlist">
+   
+    
 <?php foreach (loop('items') as $item): ?>
  <?php 
 $type = $item->getItemType()->name;
@@ -59,7 +65,25 @@ if ('Oral History' === $type): ?>
 
 <!-- mobile version -->
 <button id="splashsort_mobile" style="display:none;">Sort</button>
+ <div id="primary_mobile">
+    <h1><?php echo html_escape(get_option('simple_splash_form_splash_page_title')); ?></h1>
+<div id="simple-splash">
+    <div id="form-instructions">
+        <?php echo get_option('simple_splash_form_splash_page_instructions'); // HTML ?>
+    </div>
+    
+
+    
+    <?php echo flash(); ?>
+
+</div>
+
+</div>
 <div id="splashset_mobile">
+   
+
+    
+    
 <?php foreach (loop('items') as $item): ?>
  <?php 
 $type = $item->getItemType()->name;
