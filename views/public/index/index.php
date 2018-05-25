@@ -1,5 +1,16 @@
 <?php echo head(); ?>
 
+<style>
+
+@media screen and (min-width: 801px) and (max-width: 4024px) {
+  #primary_mobile { display: none; }   /* hide it elsewhere */
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  #primary { display: none; }  /* show it on small screens */
+}
+    
+</style>
 
 <?php
 $items = get_records('Item', array(), 25);
