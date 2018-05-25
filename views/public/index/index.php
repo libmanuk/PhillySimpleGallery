@@ -43,8 +43,6 @@ if ('Oral History' === $type): ?>
     </div>
     <?php endif; ?>
 
-    <div><h3><?php echo link_to_item('EXPLORE &raquo;', array('class'=>'permalink')); ?></h3></div>
-
     <!--<?php if (metadata('item', 'has tags')): ?>
     <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
         <?php echo tag_string('items'); ?></p>
@@ -104,8 +102,6 @@ if ('Oral History' === $type): ?>
         <?php echo $description; ?>
     </div>
     <?php endif; ?>
-
-    <div><h3><?php echo link_to_item('EXPLORE &raquo;', array('class'=>'permalink')); ?></h3></div>
 
     <!--<?php if (metadata('item', 'has tags')): ?>
     <div class="tags"><p><strong><?php echo __('Tags'); ?>:</strong>
