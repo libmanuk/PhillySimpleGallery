@@ -36,7 +36,7 @@ if ('Oral History' === $type): ?>
         <?php echo link_to_item(item_image('square_thumbnail')); ?>
     </div>
     <?php endif; ?>
-    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
+    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title'), array('snippet'=>35))); ?></h2>
     <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>160))): ?>
     <div class="splashitem-description">
         <?php echo $description; ?>
@@ -96,7 +96,7 @@ if ('Oral History' === $type): ?>
         <?php echo link_to_item(item_image('square_thumbnail')); ?>
     </div>
     <?php endif; ?>
-    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
+    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title'), array('snippet'=>35))); ?></h2>
     <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>160))): ?>
     <div class="item-description">
         <?php echo $description; ?>
