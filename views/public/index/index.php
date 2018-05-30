@@ -13,7 +13,7 @@
 </style>
 
 <?php
-$items = get_records('Item', array(), 25);
+$items = get_records('Item', array(), 300);
 set_loop_records('items', $items)
 ?>
 <button id="splashsort" style="display:none;">Sort</button>
