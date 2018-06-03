@@ -35,6 +35,7 @@ set_loop_records('items', $items)
    
     
 <?php foreach (loop('items') as $item): ?>
+<?php if (metadata('item', 'item_type_name')): ?>
  <?php 
 $type = $item->getItemType()->name;
 if ('Oral History' === $type): ?>
@@ -69,6 +70,7 @@ if ('Oral History' === $type): ?>
 <!-- end class="item entry" -->
 
     <?php endif; ?>
+    <?php endif; ?>
 <?php endforeach; ?>
 </ul>
 
@@ -94,6 +96,7 @@ if ('Oral History' === $type): ?>
     
     
 <?php foreach (loop('items') as $item): ?>
+<?php if (metadata('item', 'item_type_name')): ?>
  <?php 
 $type = $item->getItemType()->name;
 if ('Oral History' === $type): ?>
@@ -129,6 +132,7 @@ if ('Oral History' === $type): ?>
 <!-- end class="item entry" -->
 
     <?php endif; ?>
+  <?php endif; ?>
 <?php endforeach; ?>
 </div>
 
