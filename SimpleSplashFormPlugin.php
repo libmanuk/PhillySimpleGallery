@@ -4,14 +4,14 @@
  * @version $Id$
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
  * @copyright Eric C. Weig, 2017
- * @package SimpleSplashForm
+ * @package PhillySimpleGallery
  */
 
 /**
- * SimpleSplashForm plugin class
+ * PhillySimpleGallery plugin class
  *
  * @copyright Eric C. Weig, 2017
- * @package SimpleSplashForm
+ * @package PhillySimpleGallery
  */
 // Define Constants.
 define('SIMPLE_SPLASH_FORM_PAGE_PATH', 'gallery/');
@@ -20,7 +20,7 @@ define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_INSTRUCTIONS', 'Include an introduction f
 define('SIMPLE_SPLASH_FORM_ADD_TO_MAIN_NAVIGATION', 1);
 
 
-class SimpleSplashFormPlugin extends Omeka_Plugin_AbstractPlugin
+class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
 {
     // Define Hooks
     protected $_hooks = array(
