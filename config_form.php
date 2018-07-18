@@ -9,17 +9,17 @@ jQuery(window).load(function () {
 </script>
 
 <?php
-$gallery_page_title                      = get_option('philly_simple_gallery_gallery_page_title');
-$gallery_page_instructions               = get_option('philly_simple_gallery_gallery_page_instructions');
+$gallery_page_title                      = get_option('philly_simple_gallery_page_title');
+$gallery_page_instructions               = get_option('philly_simple_gallery_page_instructions');
 $add_to_main_navigation                  = get_option('philly_simple_gallery_add_to_main_navigation');
 $view = get_view();
 ?>
 
 
 <div class="field">
-    <?php echo $view->formLabel('philly_simple_gallery_page_title', 'Gallery Page Title'); ?>
+    <?php echo $view->formLabel('gallery_page_title', 'Gallery Page Title'); ?>
     <div class="inputs">
-        <?php echo $view->formText('philly_simple_gallery_page_title', $gallery_page_title, array('class' => 'textinput')); ?>
+        <?php echo $view->formText('gallery_page_title', $gallery_page_title, array('class' => 'textinput')); ?>
         <p class="explanation">
             The title of the splash page (not HTML).
         </p>
@@ -27,9 +27,9 @@ $view = get_view();
 </div>
 
 <div class="field">
-    <?php echo $view->formLabel('philly_simple_gallery_page_instructions', 'Introduction for Gallery Page'); ?>
+    <?php echo $view->formLabel('gallery_page_instructions', 'Introduction for Gallery Page'); ?>
     <div class="inputs">
-        <?php echo $view->formTextarea('philly_simple_gallery_page_instructions', $gallery_page_instructions, array('rows' => '10', 'cols' => '60', 'class' => array('textinput', 'html-editor'))); ?>
+        <?php echo $view->formTextarea('gallery_page_instructions', $gallery_page_instructions, array('rows' => '10', 'cols' => '60', 'class' => array('textinput', 'html-editor'))); ?>
         <p class="explanation">
             An introduction to add to the splash page.
         </p>
@@ -46,8 +46,6 @@ $view = get_view();
         </p>
     </div>
 </div>
-
-
 
 
 
