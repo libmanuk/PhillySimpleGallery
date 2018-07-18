@@ -14,10 +14,10 @@
  * @package PhillySimpleGallery
  */
 // Define Constants.
-define('SIMPLE_SPLASH_FORM_PAGE_PATH', 'gallery/');
-define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_TITLE', 'Gallery');
-define('SIMPLE_SPLASH_FORM_SPLASH_PAGE_INSTRUCTIONS', 'Include an introduction for the page here.');
-define('SIMPLE_SPLASH_FORM_ADD_TO_MAIN_NAVIGATION', 1);
+define('PHILLY_SIMPLE_GALLERY_PAGE_PATH', 'gallery/');
+define('PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_TITLE', 'Gallery');
+define('PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_INSTRUCTIONS', 'Include an introduction for the page here.');
+define('PHILLY_SIMPLE_GALLERY_ADD_TO_MAIN_NAVIGATION', 1);
 
 
 class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
@@ -38,16 +38,16 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
 
    public function hookInstall()
     {
-        set_option('simple_splash_form_splash_page_title', SIMPLE_SPLASH_FORM_SPLASH_PAGE_TITLE);
-        set_option('simple_splash_form_splash_page_instructions', SIMPLE_SPLASH_FORM_SPLASH_PAGE_INSTRUCTIONS);    
-        set_option('simple_splash_form_add_to_main_navigation', SIMPLE_SPLASH_FORM_ADD_TO_MAIN_NAVIGATION);    
+        set_option('philly_simple_gallery_splash_page_title', PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_TITLE);
+        set_option('philly_simple_gallery_splash_page_instructions', PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_INSTRUCTIONS);    
+        set_option('philly_simple_gallery_add_to_main_navigation', PHILLY_SIMPLE_GALLERY_ADD_TO_MAIN_NAVIGATION);    
     }
 
     public function hookUninstall()
     {
-        delete_option('simple_splash_form_splash_page_title');
-        delete_option('simple_splash_form_splash_page_instructions');
-        delete_option('simple_splash_form_add_to_main_navigation');    
+        delete_option('philly_simple_gallery_splash_page_title');
+        delete_option('philly_simple_gallery_splash_page_instructions');
+        delete_option('philly_simple_gallery_add_to_main_navigation');    
     }
 
 
@@ -55,10 +55,10 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $router = $args['router'];
         $router->addRoute(
-            'simple_splash_form_form', 
+            'philly_simple_gallery_form', 
             new Zend_Controller_Router_Route(
-                SIMPLE_SPLASH_FORM_PAGE_PATH, 
-                array('module'       => 'simple-splash-form')
+                PHILLY_SIMPLE_GALLERY_PAGE_PATH, 
+                array('module'       => 'philly-simple-gallery')
             )
         );
 
@@ -72,19 +72,19 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookConfig($args)
     {
         $post = $args['post'];
-        set_option('simple_splash_form_splash_page_title', $post['splash_page_title']);
-        set_option('simple_splash_form_splash_page_instructions',$post['splash_page_instructions']);
-        set_option('simple_splash_form_add_to_main_navigation', $post['add_to_main_navigation']);
+        set_option('philly_simple_gallery_splash_page_title', $post['gallery_page_title']);
+        set_option('philly_simple_gallery_splash_page_instructions',$post['gallery_page_instructions']);
+        set_option('philly_simple_gallery_add_to_main_navigation', $post['add_to_main_navigation']);
     }
 
     public function filterPublicNavigationMain($nav)
     {
-        $splash_title = get_option('simple_splash_form_splash_page_title');
-        $splash_add_to_navigation = get_option('simple_splash_form_add_to_main_navigation');
-        if ($splash_add_to_navigation) {
+        $gallery_title = get_option('philly_simple_gallery_splash_page_title');
+        $gallery_add_to_navigation = get_option('philly_simple_gallery_form_add_to_main_navigation');
+        if ($gallery_add_to_navigation) {
                 $nav[] = array(
-                    'label'   => $splash_title,
-                    'uri'     => url(array(),'simple_splash_form_form'),
+                    'label'   => $gallery_title,
+                    'uri'     => url(array(),'philly_simple_gallery_form_form'),
                     'visible' => true
                 );
         }
