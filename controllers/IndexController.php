@@ -2,15 +2,15 @@
 /**
  * @copyright Eric C. Weig, 2017
  * @license http://www.gnu.org/licenses/gpl-3.0.txt
- * @package SimpleSplashForm
+ * @package PhillySimpleGallery
  */
 
 /**
- * Controller for Splash form.
+ * Controller for Gallery form.
  *
- * @package SimpleSplashForm
+ * @package PhillySimpleGallery
  */
-class SimpleSplashForm_IndexController extends Omeka_Controller_AbstractActionController
+class PhillySimpleGallery_IndexController extends Omeka_Controller_AbstractActionController
 {
     public function indexAction()
     {
