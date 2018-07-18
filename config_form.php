@@ -21,7 +21,7 @@ $view = get_view();
     <div class="inputs">
         <?php echo $view->formText('gallery_page_title', $gallery_page_title, array('class' => 'textinput')); ?>
         <p class="explanation">
-            The title of the splash page (not HTML).
+            The title of the gallery page (not HTML).
         </p>
     </div>
 </div>
@@ -31,7 +31,7 @@ $view = get_view();
     <div class="inputs">
         <?php echo $view->formTextarea('gallery_page_instructions', $gallery_page_instructions, array('rows' => '10', 'cols' => '60', 'class' => array('textinput', 'html-editor'))); ?>
         <p class="explanation">
-            An introduction to add to the splash page.
+            An introduction to add to the gallery page.
         </p>
     </div>
 </div>
