@@ -1,4 +1,4 @@
-# SimpleSplashForm
+# Philly Simple Gallery
 An Omeka plugin that dynamically builds a splash HTML page using Oral History Item Type database records and the Philly Omeka theme.  The plugin also allows administrators to define a page/tab title and description.  Item records displayed on the splash page are sorted by the Oral History Item Type Sort Priority field.
 
 ##
