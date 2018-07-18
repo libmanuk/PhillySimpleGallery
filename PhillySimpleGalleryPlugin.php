@@ -15,8 +15,8 @@
  */
 // Define Constants.
 define('PHILLY_SIMPLE_GALLERY_PAGE_PATH', 'gallery/');
-define('PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_TITLE', 'Gallery');
-define('PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_INSTRUCTIONS', 'Include an introduction for the page here.');
+define('PHILLY_SIMPLE_GALLERY_PAGE_TITLE', 'Gallery');
+define('PHILLY_SIMPLE_GALLERY_PAGE_INSTRUCTIONS', 'Include an introduction for the page here.');
 define('PHILLY_SIMPLE_GALLERY_ADD_TO_MAIN_NAVIGATION', 1);
 
 
@@ -38,15 +38,15 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
 
    public function hookInstall()
     {
-        set_option('philly_simple_gallery_splash_page_title', PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_TITLE);
-        set_option('philly_simple_gallery_splash_page_instructions', PHILLY_SIMPLE_GALLERY_SPLASH_PAGE_INSTRUCTIONS);    
+        set_option('philly_simple_gallery_page_title', PHILLY_SIMPLE_GALLERY_PAGE_TITLE);
+        set_option('philly_simple_gallery_page_instructions', PHILLY_SIMPLE_GALLERY_PAGE_INSTRUCTIONS);    
         set_option('philly_simple_gallery_add_to_main_navigation', PHILLY_SIMPLE_GALLERY_ADD_TO_MAIN_NAVIGATION);    
     }
 
     public function hookUninstall()
     {
-        delete_option('philly_simple_gallery_splash_page_title');
-        delete_option('philly_simple_gallery_splash_page_instructions');
+        delete_option('philly_simple_gallery_page_title');
+        delete_option('philly_simple_gallery_page_instructions');
         delete_option('philly_simple_gallery_add_to_main_navigation');    
     }
 
@@ -55,7 +55,7 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $router = $args['router'];
         $router->addRoute(
-            'philly_simple_gallery_form', 
+            'philly_simple_gallery_form_form', 
             new Zend_Controller_Router_Route(
                 PHILLY_SIMPLE_GALLERY_PAGE_PATH, 
                 array('module'       => 'philly-simple-gallery')
@@ -72,15 +72,15 @@ class PhillySimpleGalleryPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookConfig($args)
     {
         $post = $args['post'];
-        set_option('philly_simple_gallery_splash_page_title', $post['gallery_page_title']);
-        set_option('philly_simple_gallery_splash_page_instructions',$post['gallery_page_instructions']);
+        set_option('philly_simple_gallery_page_title', $post['gallery_page_title']);
+        set_option('philly_simple_gallery_page_instructions',$post['gallery_page_instructions']);
         set_option('philly_simple_gallery_add_to_main_navigation', $post['add_to_main_navigation']);
     }
 
     public function filterPublicNavigationMain($nav)
     {
-        $gallery_title = get_option('philly_simple_gallery_splash_page_title');
-        $gallery_add_to_navigation = get_option('philly_simple_gallery_form_add_to_main_navigation');
+        $gallery_title = get_option('philly_simple_gallery_page_title');
+        $gallery_add_to_navigation = get_option('philly_simple_gallery_add_to_main_navigation');
         if ($gallery_add_to_navigation) {
                 $nav[] = array(
                     'label'   => $gallery_title,
